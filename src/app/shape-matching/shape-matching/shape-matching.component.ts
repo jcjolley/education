@@ -9,13 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ShapeMatchingComponent implements OnInit {
 
-  constructor(private shapeMatchingService: ShapeMatchingService,
+  constructor(public shapeMatchingService: ShapeMatchingService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
     const sub = this.route.params.subscribe(params => 
       this.shapeMatchingService.numOptions = params['numOptions'] || 3
-      )
+    )
+
     this.shapeMatchingService.getNewShapes();
   }
 
