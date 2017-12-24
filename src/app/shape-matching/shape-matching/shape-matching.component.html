@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <shape [shape]="shapeMatchingService.currentShape"></shape>
+    </div>
+    <div class="col-4">
+      <shape *ngFor="let myShape of shapeMatchingService.shapesToChooseFrom" [shape]="myShape"
+             (click)="shapeMatchingService.checkForMatch(myShape)"></shape>
+    </div>
+  </div>
+</div>
